@@ -1,0 +1,24 @@
+<!-- <hello name="{{ name }}"></hello> -->
+<p>
+  
+</p>
+
+
+ <ng-container *ngFor="let b of row;">
+   <ng-container *ngFor="let k of col;">
+      {{bintang}}
+     
+     <ng-template *ngIf="k % 5 == 0 && k/5==1;then templatetrue;"> </ng-template>
+     
+   </ng-container>
+ </ng-container>
+ 
+ <ng-template #templatetrue>
+   <br>
+  </ng-template>
+
+     
+ <br>
+ <label style="padding-right:12px;">Baris </label><input [(ngModel)]="baris" type="text"/>  <br><br>
+ <label>Kolom </label><input [(ngModel)]="kolom" type="text"/>
+ 
