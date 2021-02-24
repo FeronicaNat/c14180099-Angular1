@@ -4,7 +4,7 @@
 </p>
 
 
- <ng-container *ngFor="let b of row;">
+ <!-- <ng-container *ngFor="let b of row;">
    <ng-container *ngFor="let k of col;">
       {{bintang}}
      
@@ -20,5 +20,43 @@
      
  <br>
  <label style="padding-right:12px;">Baris </label><input [(ngModel)]="baris" type="text"/>  <br><br>
- <label>Kolom </label><input [(ngModel)]="kolom" type="text"/>
+ <label>Kolom </label><input [(ngModel)]="kolom" type="text"/> -->
  
+
+
+  <!-- <br>
+ <label style="padding-right:12px;">Baris </label><input [(ngModel)]="baris" type="number"/>  <br><br>
+ <label>Kolom </label><input [(ngModel)]="kolom" type="number"/>
+
+ <br><br> -->
+ <!-- <button (click)="changePlayer(baris,kolom)"> SEND</button> -->
+
+ 
+ <p> Player: {{player}}</p>
+
+ <h3>{{winner}}</h3>
+<!-- <ng-container *ngFor="let ba of board;let i=index">
+  <ng-container *ngFor="let ko of board;let j=index">
+   {{board[i][j]}}
+   </ng-container>
+</ng-container> -->
+
+ <ng-container *ngFor="let ba of board;">
+   <ng-container *ngFor="let ko of ba;let i=index">
+     {{ko}}
+     <ng-template *ngIf="i % 5 == 0 && i/5==1;then templatetrue;"> </ng-template>
+   </ng-container>
+ </ng-container>
+ 
+ <ng-template #templatetrue>
+   <br>
+ </ng-template>
+ 
+ <br>
+ <label style="padding-right:12px;">Baris </label><input [(ngModel)]="baris" type="number" style="background-color:pink;"/>  <br><br>
+ <label>Kolom </label><input [(ngModel)]="kolom" type="number" style="background-color:pink;"/>
+
+ <br><br>
+ <button style="border-radius:20px;background-color:pink;"(click)="changePlayer()">Enter</button>
+
+
