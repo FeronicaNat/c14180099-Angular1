@@ -90,9 +90,8 @@ export class AppComponent  {
      var jumver=1;
 
      //cek baris keatas
-     var vb=this.baris-1;
-     var vk=this.kolom-1;
-
+     
+     var vb=baris-1;
      while(vb>=1){
        if(this.board[vb][kolom]==this.player){
          jumver+=1;
@@ -104,6 +103,7 @@ export class AppComponent  {
      }
 
      //cek baris kebawah
+     vb=baris+1;
      while(vb<=5){
        if(this.board[vb][kolom]==this.player){
          jumver+=1;
@@ -116,6 +116,7 @@ export class AppComponent  {
 
      //11 12 13 14 15
      //cek kolom kekiri
+     var vk=kolom-1;
      while(vk>=1){
        if(this.board[baris][vk]==this.player){
          jumhoriz+=1;
@@ -127,6 +128,7 @@ export class AppComponent  {
      }
      
      //cek kolom kekanan
+     vk=kolom+1;
      while(vk<=5){
        if(this.board[baris][vk]==this.player){
          jumver+=1;
