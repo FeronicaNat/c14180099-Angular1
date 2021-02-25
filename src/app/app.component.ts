@@ -145,8 +145,6 @@ export class AppComponent  {
          this.player="-";
          this.winnerstat=true;
      }
-
-    
    }
    
 }
