@@ -141,7 +141,7 @@ export class AppComponent  {
      }
 
      if(jumver>=4 || jumhoriz>=4){
-         this.winner="The winner is Player"+this.player;
+         this.winner="Congrats! The winner is Player "+this.player;
          this.player="-";
          this.winnerstat=true;
      }
