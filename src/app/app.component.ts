@@ -29,6 +29,11 @@ export class AppComponent  {
    winnerstat:boolean=false;
    countwin1=0;
    countwin0=0;
+   cekh=1;
+   cekv=1;
+  //  brs:number;
+  //  klm:number;
+   
   
 
    ngOnInit(){
@@ -47,13 +52,13 @@ export class AppComponent  {
        if(this.baris>0 &&this.baris<=5&&this.kolom>0&&this.kolom<=5){
          if(this.board[this.baris][this.kolom]=="*"){
            this.board[this.baris][this.kolom]=this.player;
+           this.checkWinner(this.baris,this.kolom);
            if(this.player=="1"){
              this.player="0";
            }
            else{
              this.player="1";
            }
-           this.checkWinner();
          }
          else{
            alert("Baris dan kolom tersebut sudah diisi");
@@ -78,57 +83,32 @@ export class AppComponent  {
      }
    }
 
-   checkWinner(){
+   checkWinner(baris,kolom){
+
+     var jumhoriz=1;
+     var jumver=1;
+
+     var vb=baris-1;
+     while(vb>=1){
+       if(this.board[vb][kolom]){
+         
+       }
+     }
+
+
+
+
      
-     //  buat baris hrs 11 21 31 41 51
-     for(var b=1;b<6;b++){
-       this.countwin0=0;
-       this.countwin1=0;
-       for(var k=1;k<6;k++){
-         if(this.board[k][b]=="0"){
-           this.countwin0++;
-         }
-         else if(this.board[k][b]=="1"){
-           this.countwin1++;
-         }
-       }
-       if(this.countwin0>=4){
-         this.winner="The winner is Player 0";
-         this.player="-";
-         this.winnerstat=true;
-       }
-       else if(this.countwin1>=4){
-         this.winner="The winner is Player 1"
-         this.player="-";
-         this.winnerstat=true;
-       }
-     }
+    
 
 
-     //  bua kolom hrs 11 12 13 14 15
-     for(var b=1;b<6;b++){
-       this.countwin0=0; //reset count klo beda baris
-       this.countwin1=0;
-       for(var k=1;k<6;k++){
-         if(this.board[b][k]=="0"){
-           this.countwin0++;
-         }
-         else if(this.board[b][k]=="1"){
-           this.countwin1++;
-         }
-       }
-       if(this.countwin0>=4){
-         this.winner="The winner is Player 0";
-         this.player="-";
-         this.winnerstat=true;
-       }
-       else if(this.countwin1>=4){
-         this.winner="The winner is Player 1";
-         this.player="-";
-         this.winnerstat=true;
-       }
 
-     }
+     
+
+
+ 
+
+    
    }
    
 }
