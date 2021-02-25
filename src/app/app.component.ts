@@ -56,9 +56,10 @@ export class AppComponent  {
            if(this.player=="1"){
              this.player="0";
            }
-           else{
+           else if(this.player=="0"){
              this.player="1";
            }
+           
          }
          else{
            alert("Baris dan kolom tersebut sudah diisi");
@@ -112,7 +113,45 @@ export class AppComponent  {
        vb+=1;
      }
 
+     //11 12 13 14 15
      //cek kolom kekiri
+     while(vk>=1){
+       if(this.board[baris][vk]==this.player){
+         jumhoriz+=1;
+       }
+       else{
+         vk=0;
+       }
+       vk-=1;
+     }
+     
+     //cek kolom kekanan
+     while(vk<=5){
+       if(this.board[baris][vk]==this.player){
+         jumver+=1;
+       }
+       else{
+         vk=6;
+       }
+       vk+=1;
+     }
+
+     if(jumver>=4){
+         this.winner="The winner is "+this.player;
+         this.player="-";
+         this.winnerstat=true;
+     }
+     else if(jumhoriz>=4){
+         this.winner="The winner is "+this.player;
+         this.player="-";
+         this.winnerstat=true;
+     }
+     else if(jumver>=4 && jumhoriz>=4){
+         this.winner="The winner is "+this.player;
+         this.player="-";
+         this.winnerstat=true;
+     }
+
 
 
 
