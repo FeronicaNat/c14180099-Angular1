@@ -47,42 +47,77 @@ export class AppComponent  {
      }
    }
 
-   changePlayer(){
-     if(this.winnerstat==false){
-       if(this.baris>0 &&this.baris<=5&&this.kolom>0&&this.kolom<=5){
-         if(this.board[this.baris][this.kolom]=="*"){
-           this.board[this.baris][this.kolom]=this.player;
-           this.checkWinner(this.baris,this.kolom);
-           if(this.player=="1"){
-             this.player="0";
-           }
-           else if(this.player=="0"){
-             this.player="1";
-           }
+  //  changePlayer(){
+  //    if(this.winnerstat==false){
+  //      if(this.baris>0 &&this.baris<=5&&this.kolom>0&&this.kolom<=5){
+  //        if(this.board[this.baris][this.kolom]=="*"){
+  //          this.board[this.baris][this.kolom]=this.player;
+  //          this.checkWinner(this.baris,this.kolom);
+  //          if(this.player=="1"){
+  //            this.player="0";
+  //          }
+  //          else if(this.player=="0"){
+  //            this.player="1";
+  //          }
            
-         }
-         else{
-           alert("Baris dan kolom tersebut sudah diisi");
-         }
-       }
-       else if(this.baris<0){
-         alert("Baris tidak boleh kurang dari 1");
-       }
-       else if(this.baris>5){
-         alert("Baris tidak boleh lebih dari 5");
-       }
-       else if(this.kolom<0){
-         alert("Kolom tidak boleh kurang dari 1")
-       }
-       else if(this.kolom>5){
-         alert("Kolom tidak boleh lebih dari 5")
-       }
-       else{
-         alert("Baris atau kolom tidak sesuai")
-       }
+  //        }
+  //        else{
+  //          alert("Baris dan kolom tersebut sudah diisi");
+  //        }
+  //      }
+  //      else if(this.baris<0){
+  //        alert("Baris tidak boleh kurang dari 1");
+  //      }
+  //      else if(this.baris>5){
+  //        alert("Baris tidak boleh lebih dari 5");
+  //      }
+  //      else if(this.kolom<0){
+  //        alert("Kolom tidak boleh kurang dari 1")
+  //      }
+  //      else if(this.kolom>5){
+  //        alert("Kolom tidak boleh lebih dari 5")
+  //      }
+  //      else{
+  //        alert("Baris atau kolom tidak sesuai")
+  //      }
     
-     }
-   }
+  //    }
+  //  }
+  
+    changePlayer(){
+      if(this.winnerstat==false){
+        if(this.board[this.baris][this.kolom]=="*"){
+          if(this.baris>0 &&this.baris<=5&&this.kolom>0&&this.kolom<=5){
+            this.board[this.baris][this.kolom]=this.player;
+            this.checkWinner(this.baris,this.kolom);
+            if(this.player=="1"){
+              this.player="0";
+            }
+            else if(this.player=="0"){
+              this.player="1";
+            }
+          }
+          else if(this.baris<0){
+            alert("Baris tidak boleh kurang dari 1");
+          }
+          else if(this.baris>5){
+            alert("Baris tidak boleh lebih dari 5");
+          }
+          else if(this.kolom<0){
+            alert("Kolom tidak boleh kurang dari 1")
+          }
+          else if(this.kolom>5){
+            alert("Kolom tidak boleh lebih dari 5")
+          }
+          else{
+            alert("Baris atau kolom tidak sesuai")
+          }
+        }
+        else{
+          alert("Baris dan kolom tersebut sudah diisi");
+        }
+      }
+    }
 
    checkWinner(baris,kolom){
 
