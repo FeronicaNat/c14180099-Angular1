@@ -90,9 +90,9 @@ export class AppComponent  {
      var jumver=1;
 
      //cek baris keatas
-     var vb=baris-1;
-     var vk=kolom-1;
-     
+     var vb=this.baris-1;
+     var vk=this.kolom-1;
+
      while(vb>=1){
        if(this.board[vb][kolom]==this.player){
          jumver+=1;
@@ -152,22 +152,6 @@ export class AppComponent  {
          this.player="-";
          this.winnerstat=true;
      }
-
-
-
-
-
-
-     
-    
-
-
-
-     
-
-
- 
-
     
    }
    
