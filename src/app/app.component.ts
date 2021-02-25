@@ -92,6 +92,7 @@ export class AppComponent  {
      //cek baris keatas
      var vb=baris-1;
      var vk=kolom-1;
+     
      while(vb>=1){
        if(this.board[vb][kolom]==this.player){
          jumver+=1;
