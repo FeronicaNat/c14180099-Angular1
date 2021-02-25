@@ -88,12 +88,32 @@ export class AppComponent  {
      var jumhoriz=1;
      var jumver=1;
 
+     //cek baris keatas
      var vb=baris-1;
+     var vk=kolom-1;
      while(vb>=1){
-       if(this.board[vb][kolom]){
-         
+       if(this.board[vb][kolom]==this.player){
+         jumver+=1;
        }
+       else{
+         vb=0;
+       }
+       vb-=1;
      }
+
+     //cek baris kebawah
+     while(vb<=5){
+       if(this.board[vb][kolom]==this.player){
+         jumver+=1;
+       }
+       else{
+         vb=6;
+       }
+       vb+=1;
+     }
+
+     //cek kolom kekiri
+
 
 
 
