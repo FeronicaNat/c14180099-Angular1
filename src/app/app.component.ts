@@ -89,6 +89,7 @@ export class AppComponent  {
      var jumhoriz=1;
      var jumver=1;
 
+     //11 21 31 41 51
      //cek baris keatas
      
      var vb=baris-1;
@@ -131,7 +132,7 @@ export class AppComponent  {
      vk=kolom+1;
      while(vk<=5){
        if(this.board[baris][vk]==this.player){
-         jumver+=1;
+         jumhoriz+=1;
        }
        else{
          vk=6;
@@ -139,21 +140,12 @@ export class AppComponent  {
        vk+=1;
      }
 
-     if(jumver>=4){
-         this.winner="The winner is "+this.player;
+     if(jumver>=4 || jumhoriz>=4){
+         this.winner="The winner is Player"+this.player;
          this.player="-";
          this.winnerstat=true;
      }
-     else if(jumhoriz>=4){
-         this.winner="The winner is "+this.player;
-         this.player="-";
-         this.winnerstat=true;
-     }
-     else if(jumver>=4 && jumhoriz>=4){
-         this.winner="The winner is "+this.player;
-         this.player="-";
-         this.winnerstat=true;
-     }
+
     
    }
    
